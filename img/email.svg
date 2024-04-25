@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="email.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="0.79003906"
+     inkscape:cx="409.47342"
+     inkscape:cy="266.44252"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect5197"
+       style="fill:#ff00ff;stroke:none;stroke-width:24.1362;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill"
+       d="M 49.826172 68.445312 L 49.826172 68.605469 A 43.594261 43.594261 0 0 0 6.6796875 109.01172 L 6.4667969 109.01172 L 6.4667969 112.00195 A 43.594261 43.594261 0 0 0 6.4550781 112.16602 A 43.594261 43.594261 0 0 0 6.4667969 112.33008 L 6.4667969 393.64844 A 43.594261 43.594261 0 0 0 6 399.96094 A 43.594261 43.594261 0 0 0 49.59375 443.55469 A 43.594261 43.594261 0 0 0 50.052734 443.48242 L 460.62695 443.48242 L 460.62695 443.27344 A 43.594261 43.594261 0 0 0 462.40625 443.55469 A 43.594261 43.594261 0 0 0 506 399.96094 A 43.594261 43.594261 0 0 0 505.94336 397.76953 L 505.94336 112.95898 A 43.594261 43.594261 0 0 0 506 112.16602 A 43.594261 43.594261 0 0 0 505.94336 109.97461 L 505.94336 109.01172 L 505.87305 109.01172 A 43.594261 43.594261 0 0 0 462.40625 68.572266 A 43.594261 43.594261 0 0 0 460.62695 68.845703 L 460.62695 68.445312 L 49.826172 68.445312 z M 58.224609 99.361328 L 458.20508 99.361328 L 258.21484 274.03711 L 58.224609 99.361328 z M 36.09375 124.57812 L 184.67188 255.12695 L 36.09375 385.67773 L 36.09375 124.57812 z M 479.24805 124.57812 L 479.24805 385.67773 L 330.67188 255.12695 L 479.24805 124.57812 z M 209.67188 276.21875 C 209.67188 276.21875 232.78057 302.57092 258.21484 302.17773 C 281.48739 301.81796 304.85547 276.33203 304.85547 276.33203 L 458.20508 410.20117 L 58.224609 410.20117 L 209.67188 276.21875 z " />
+  </g>
+</svg>
