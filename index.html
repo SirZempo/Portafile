@@ -29,13 +29,13 @@
             </ul>
         </nav>
         <nav class="nav-modo-oscuro">
-            <button class="boton-tema">
+            <button class="boton-tema" id="menu-boton" aria-haspopup="true" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" width="20" height="20">
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                 </svg>
                 <span class="nombre-tema exo-2-fuente">Oscuro</span>
             </button>
-            <section id="menu-temas">
+            <section aria-labelledby="menu-boton" id="menu-temas">
                 <button class="tema">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" width="20" height="20">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -56,68 +56,106 @@
                 </button>
             </section>
         </nav>
+        <div id="menu-fondo" class="boton-seguir">
+        </div>
     </header>
+    <script>
+        const listaItem = document.querySelectorAll(".nav-enlaces li");
+        const menuBackDrop = document.querySelector("#menu-fondo");
+
+        listaItem.forEach((element) => {
+            element.addEventListener("mouseenter", () =>{
+                const {left, top, width, height} = element.getBoundingClientRect();
+                const {clientHeight, clientWidth} = element;
+
+                menuBackDrop.style.setProperty("--left", `${left}px`);
+                menuBackDrop.style.setProperty("--top", `${top}px`);
+                menuBackDrop.style.setProperty("--width", `${width}px`);
+                menuBackDrop.style.setProperty("--height", `${height}px`);
+
+                menuBackDrop.style.opacity = "1";
+                menuBackDrop.style.visibility = "visible";
+            });
+
+            element.addEventListener("mouseleave", ()=>{
+                menuBackDrop.style.opacity = "0";
+                menuBackDrop.style.visibility = "hidden";
+            })
+        });
+
+        window.addEventListener("scroll", e =>{
+            let cambioHeader = document.querySelector("header");
+            cambioHeader.classList.toggle("header-fondo", window.scrollY);
+        });
+    </script>
     <!------------------------------------------------------------------------->
     <main>
         <section id="home">
-            <div class="contenedor-fondo-patron">
-                <div class="fondo-patron">  
+            <div class="home">
+                <div class="contenedor-fondo-patron">
+                    <div class="fondo-patron">  
+                    </div>
                 </div>
-            </div>
-            <div class="contenedor-logo">
-                <div class="nube"></div>
-                <img src="img/luciernaga02.svg" alt="Logo">
-            </div>
-            <div class="contenedor-titulos">
-                <h1>Uriel Jimenez Zempoalteca</h1>
-                <h2>Web Developer</h2>
+                <div class="contenedor-logo">
+                    <div class="nube"></div>
+                    <img src="img/luciernaga02.svg" alt="Logo">
+                </div>
+                <div class="contenedor-titulos">
+                    <h1>Uriel Jimenez Zempoalteca</h1>
+                    <h2>Web Developer</h2>
+                </div>
             </div>
         </section>
         <section id="sobre-mi">
-            <h1>Sobre mi</h1>
-            <div class="contenedor-sobre-mi">
-                <div class="sobre-mi-foto">
-                    <div class="foto-back"></div>
-                    <img src="img/yop.png" alt="Uriel Jimenez">
-                    <div class="foto-front"></div>
+            <div class="sobre-mi">
+                <div class="contenedor-subtitulo">
+                    <h1>Sobre mi</h1>
                 </div>
-                <div class="sobre-mi-descipcion">
-                    <p>Soy un entusia del mundo de la programación, constantemente busco mejorar por lo que dedico horas de aprendizaje embarcandome con nuevos desafíos que me hagan probar mis  habilidades mientras me divierto creando soluciones través de la programación.</p>
-                    <br>
-                    <p>Siempre me e considerado una persona muy curiosa por lo que cuando no estoy programando me dedico a aprender sobre otros temas de interes como lo son las artes, botanica, y electronica.</p>
+                <div class="contenedor-sobre-mi">
+                    <div class="sobre-mi-foto">
+                        <div class="foto-back"></div>
+                    </div>
+                    <div class="sobre-mi-descipcion exo-2-fuente">
+                        <p> Soy un entusiasta del mundo de la programación, constantemente busco mejorar por lo que dedico horas practicando con nuevos desafíos que me hagan probar mis habilidades mientras me divierto creando soluciones a través de la programación.</p>
+
+                        <p>Cuando no me encuentro programando me dedico a realizar otras actividades como lo es el pintar o bocetear mis ideas. </p>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="proyectos">
-            <h1>Proyectos</h1>
-            <article class="contenedor-proyectos">
-                <img src="img/encriptador.png" alt="Proyecto-Encriptador">
-                <section class="proyecto-cuerpo">
-                    <div class="proyecto-contenido">
-                        <h3>Encriptador - Desencriptador</h3>
-                        <p>Aplicación para crear mensajes encriptados o desencriptados. Basado en el diseño original de <strong>Alura</strong>.</p>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JAVASCRIPT</li>
-                        </ul>
+            <div class="proyectos">
+                <article class="contenedor-proyectos">
+                    <div class="imagen-proyecto">
+                        <img src="img/encriptador.png" alt="Proyecto-Encriptador">
                     </div>
-                    <div class="proyecto-pie">
-                        <a href="https://sirzempo.github.io/Encriptador/">
-                            <svg aria-hidden="true" role="img" class="octicon octicon-rocket" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;">
-                                <path fill-rule="evenodd" d="M14.064 0a8.75 8.75 0 00-6.187 2.563l-.459.458c-.314.314-.616.641-.904.979H3.31a1.75 1.75 0 00-1.49.833L.11 7.607a.75.75 0 00.418 1.11l3.102.954c.037.051.079.1.124.145l2.429 2.428c.046.046.094.088.145.125l.954 3.102a.75.75 0 001.11.418l2.774-1.707a1.75 1.75 0 00.833-1.49V9.485c.338-.288.665-.59.979-.904l.458-.459A8.75 8.75 0 0016 1.936V1.75A1.75 1.75 0 0014.25 0h-.186zM10.5 10.625c-.088.06-.177.118-.266.175l-2.35 1.521.548 1.783 1.949-1.2a.25.25 0 00.119-.213v-2.066zM3.678 8.116L5.2 5.766c.058-.09.117-.178.176-.266H3.309a.25.25 0 00-.213.119l-1.2 1.95 1.782.547zm5.26-4.493A7.25 7.25 0 0114.063 1.5h.186a.25.25 0 01.25.25v.186a7.25 7.25 0 01-2.123 5.127l-.459.458a15.21 15.21 0 01-2.499 2.02l-2.317 1.5-2.143-2.143 1.5-2.317a15.25 15.25 0 012.02-2.5l.458-.458h.002zM12 5a1 1 0 11-2 0 1 1 0 012 0zm-8.44 9.56a1.5 1.5 0 10-2.12-2.12c-.734.73-1.047 2.332-1.15 3.003a.23.23 0 00.265.265c.671-.103 2.273-.416 3.005-1.148z"></path>
-                            </svg>
-                            Visitar sitio
-                        </a>
-                        <a href="https://github.com/SirZempo/Encriptador">
-                            <svg aria-hidden="true" role="img" class="octicon octicon-code" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;">
-                                <path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z"></path>
-                            </svg>
-                            Codigo Fuente
-                        </a>
-                    </div>
-                </section>
-            </article>
+                    <section class="proyecto-cuerpo">
+                        <div class="proyecto-contenido">
+                            <h3>Encriptador - Desencriptador</h3>
+                            <p class="exo-2-fuente">Aplicación para crear mensajes encriptados o desencriptados. Basado en el diseño original de <strong>Alura</strong>.</p>
+                            <ul class="exo-2-fuente">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JAVASCRIPT</li>
+                            </ul>
+                        </div>
+                        <div class="proyecto-pie">
+                            <a class="exo-2-fuente" id="sitio" target="_blank" href="https://sirzempo.github.io/Encriptador/">
+                                <svg aria-hidden="true" role="img" class="octicon octicon-rocket" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;">
+                                    <path fill-rule="evenodd" d="M14.064 0a8.75 8.75 0 00-6.187 2.563l-.459.458c-.314.314-.616.641-.904.979H3.31a1.75 1.75 0 00-1.49.833L.11 7.607a.75.75 0 00.418 1.11l3.102.954c.037.051.079.1.124.145l2.429 2.428c.046.046.094.088.145.125l.954 3.102a.75.75 0 001.11.418l2.774-1.707a1.75 1.75 0 00.833-1.49V9.485c.338-.288.665-.59.979-.904l.458-.459A8.75 8.75 0 0016 1.936V1.75A1.75 1.75 0 0014.25 0h-.186zM10.5 10.625c-.088.06-.177.118-.266.175l-2.35 1.521.548 1.783 1.949-1.2a.25.25 0 00.119-.213v-2.066zM3.678 8.116L5.2 5.766c.058-.09.117-.178.176-.266H3.309a.25.25 0 00-.213.119l-1.2 1.95 1.782.547zm5.26-4.493A7.25 7.25 0 0114.063 1.5h.186a.25.25 0 01.25.25v.186a7.25 7.25 0 01-2.123 5.127l-.459.458a15.21 15.21 0 01-2.499 2.02l-2.317 1.5-2.143-2.143 1.5-2.317a15.25 15.25 0 012.02-2.5l.458-.458h.002zM12 5a1 1 0 11-2 0 1 1 0 012 0zm-8.44 9.56a1.5 1.5 0 10-2.12-2.12c-.734.73-1.047 2.332-1.15 3.003a.23.23 0 00.265.265c.671-.103 2.273-.416 3.005-1.148z"></path>
+                                </svg>
+                                Visitar sitio
+                            </a>
+                            <a class="exo-2-fuente" id="codigo" target="_blank" href="https://github.com/SirZempo/Encriptador">
+                                <svg aria-hidden="true" role="img" class="octicon octicon-code" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;">
+                                    <path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z"></path>
+                                </svg>
+                                Codigo Fuente
+                            </a>
+                        </div>
+                    </section>
+                </article>
+            </div>
         </section>
         <section id="habilidades">
             <h1> Habilidades </h1>
