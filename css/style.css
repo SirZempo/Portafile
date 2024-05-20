@@ -291,7 +291,7 @@ h1, h2, h3 {
         }
 
         .foto{
-            background-image: url(../img/yop.png);
+            /*background-image: url(../img/yop.png);*/
             min-width: 246px;
             min-height: 329px;
             background-size: contain;
@@ -299,6 +299,10 @@ h1, h2, h3 {
             background-repeat: no-repeat;
             max-width: 738px;
             max-height: 987px;
+        }
+
+        .foto img{
+            width: 246px;
         }
 
         .foto::before{
@@ -667,6 +671,10 @@ h1, h2, h3 {
     .foto{
         width: 369px;
         height: 493px;
+    }
+
+    .foto img{
+        width: 100%;
     }
 
     .contenedor-titulos h1{
