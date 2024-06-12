@@ -9,8 +9,6 @@
     --width: ;
     --height: ;
     /* ----- ----- ----- */
-
-    --tamanio-height: calc((59.85%*width)/100%);
 }
 
 :root, :root.dark{
